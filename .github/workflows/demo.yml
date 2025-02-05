@@ -14,6 +14,15 @@ on:
 
 
 jobs:
+
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest  
+    strategy:
+      matrix:
+        configuration: [debug, release]
+    steps:
+    - run: echo "🔧 Building the configuration ${{ matrix.configuration }}."
+    
   build:
     runs-on: ubuntu-latest
     steps:
